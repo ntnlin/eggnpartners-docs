@@ -226,8 +226,10 @@ tbody tr:hover{background:var(--purple-bg)}
 
 /* ── LOGO SVG ── */
 .logo-svg-wrap{display:flex;align-items:center;line-height:0}
-.logo-svg-wrap svg{height:18px;width:auto;filter:brightness(0);transition:filter 0.2s}
+.logo-svg-wrap svg{height:18px;width:auto;filter:brightness(0);transition:filter 0.3s}
 .header-logo:hover .logo-svg-wrap svg{filter:brightness(0)}
+[data-theme="dark"] .logo-svg-wrap svg{filter:brightness(0) invert(1)}
+[data-theme="dark"] .header-logo:hover .logo-svg-wrap svg{filter:brightness(0) invert(1)}
 
 /* ── PAGE LOAD ANIMATION ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
@@ -288,3 +290,169 @@ tbody tr{transition:background 0.15s}
   h1{font-size:1.8rem}
   .content{padding:24px 16px 80px}
 }
+
+/* ── DARK MODE ── */
+[data-theme="dark"] {
+  --bg: #0E0E12;
+  --fg: #EAEAF0;
+  --fg-muted: #A0A0B0;
+  --fg-subtle: #666680;
+  --border: #2A2A38;
+  --border-light: #1E1E2A;
+  --purple: #A78BFA;
+  --purple-soft: #C4B5FD;
+  --purple-bg: rgba(167,139,250,0.08);
+  --purple-bg-hover: rgba(167,139,250,0.14);
+  --purple-border: rgba(167,139,250,0.22);
+  --diagram-accent: #A78BFA;
+  --diagram-light: #1E1830;
+  --diagram-mid: #2A2040;
+  --diagram-dark: #C4B5FD;
+}
+
+[data-theme="dark"] body {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+[data-theme="dark"] .site-header {
+  background: rgba(14,14,18,0.95);
+}
+
+[data-theme="dark"] .sidebar {
+  background: var(--bg);
+}
+
+[data-theme="dark"] .info-box {
+  background: #141420;
+}
+
+[data-theme="dark"] .diagram-container {
+  background: #13131C;
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .table-wrap {
+  border-color: var(--border);
+}
+
+[data-theme="dark"] thead th {
+  background: #13131C;
+  color: var(--fg-muted);
+}
+
+[data-theme="dark"] .phase-card {
+  background: #13131C;
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .formula {
+  background: #131324;
+  color: var(--purple-soft);
+  border-color: var(--purple-border);
+}
+
+[data-theme="dark"] a {
+  color: var(--purple-soft);
+}
+
+[data-theme="dark"] .header-tag {
+  color: var(--purple-soft);
+  background: var(--purple-bg);
+  border-color: var(--purple-border);
+}
+
+[data-theme="dark"] .badge {
+  color: var(--purple-soft);
+  background: var(--purple-bg);
+  border-color: var(--purple-border);
+}
+
+[data-theme="dark"] .callout {
+  background: var(--purple-bg);
+  border-color: var(--purple-border);
+}
+
+[data-theme="dark"] .callout-title {
+  color: var(--purple-soft);
+}
+
+[data-theme="dark"] .diagram-label {
+  background: #0E0E12;
+  color: var(--fg-subtle);
+  border-top-color: var(--border);
+}
+
+[data-theme="dark"] tbody tr:hover {
+  background: var(--purple-bg);
+}
+
+[data-theme="dark"] .page-nav a {
+  border-color: var(--border);
+  color: var(--fg);
+}
+
+[data-theme="dark"] .page-nav a:hover {
+  border-color: var(--purple-border);
+  background: var(--purple-bg);
+}
+
+[data-theme="dark"] .menu-toggle svg {
+  stroke: var(--fg);
+}
+
+/* Dark mode logo handled via filter:invert in .logo-svg-wrap svg rule above */
+
+/* ── DARK MODE TOGGLE BUTTON ── */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: none;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  color: var(--fg-muted);
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  background: var(--purple-bg);
+  border-color: var(--purple-border);
+  color: var(--purple);
+}
+
+.theme-toggle svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.4s cubic-bezier(0.22,1,0.36,1);
+}
+
+[data-theme="dark"] .theme-toggle svg {
+  transform: rotate(180deg);
+}
+
+.theme-toggle-wrap {
+  position: relative;
+  width: 16px;
+  height: 16px;
+}
+.icon-sun, .icon-moon {
+  position: absolute;
+  top: 0; left: 0;
+  width: 16px;
+  height: 16px;
+  transition: opacity 0.25s;
+}
+.icon-sun  { opacity: 1; }
+.icon-moon { opacity: 0; }
+[data-theme="dark"] .icon-sun  { opacity: 0; }
+[data-theme="dark"] .icon-moon { opacity: 1; }
