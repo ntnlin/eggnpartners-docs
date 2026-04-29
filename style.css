@@ -1008,3 +1008,992 @@ tbody tr:hover td{background:var(--purple-bg)}
 [data-theme="dark"] .diag-title{color:var(--fg)}
 /* Introduction dark-bg header */
 [data-theme="dark"] .diag-col-head.dark-bg{background:#1a1a2e;color:var(--fg)}
+
+/* ══════════════════════════════════════════
+   MOBILE RESPONSIVE — COMPREHENSIVE FIX
+   Targets: diagrams, stat-grid, phase-grid,
+   page-nav, tables, formulas, all diag-* layouts
+   ══════════════════════════════════════════ */
+
+/* ── Tablet (≤900px) — sidebar collapses ── */
+@media (max-width: 900px) {
+
+  /* Diagrams: remove min-height, allow wrap */
+  .diag-cols {
+    flex-direction: column;
+    min-height: unset;
+    gap: 8px;
+  }
+  .diag-arrow {
+    width: 100%;
+    height: 28px;
+    justify-content: center;
+    transform: rotate(90deg);
+  }
+  .diag-col {
+    border-radius: var(--radius);
+    min-width: unset;
+    width: 100%;
+  }
+
+  /* Stages: wrap into 2 columns then stack */
+  .diag-stages {
+    flex-wrap: wrap;
+    min-height: unset;
+    gap: 8px;
+  }
+  .diag-stage {
+    flex: 1 1 calc(50% - 4px);
+    min-width: 0;
+  }
+  .diag-stage-connector {
+    display: none;
+  }
+
+  /* Dual columns: stack vertically */
+  .diag-dual {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .diag-dual-connect {
+    width: 100%;
+    height: 40px;
+  }
+  .diag-dual-connect::before {
+    top: 50%;
+    left: 50%;
+    right: auto;
+    width: 2px;
+    height: 100%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* Layers: comfortable on tablet */
+  .diag-layers {
+    gap: 8px;
+  }
+
+  /* Inner HTML diagram padding */
+  .diag-inner {
+    padding: 16px 12px;
+    gap: 12px;
+  }
+
+  /* Stat grid: always 2-col on tablet */
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  /* Phase grid: already 1-col from original rule ✓ */
+
+  /* Page nav: full width */
+  .page-nav {
+    grid-template-columns: 1fr;
+  }
+
+  /* diagram-container inner padding */
+  .diagram-container {
+    margin: 24px 0;
+  }
+
+  /* Tables: allow horizontal scroll */
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Heading scale */
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.2rem; margin-top: 36px; }
+  h3 { font-size: 1rem; }
+
+  /* Callout padding */
+  .callout {
+    padding: 16px 18px;
+  }
+
+  /* Diagram label */
+  .diagram-label {
+    font-size: 10px;
+    padding: 8px 14px;
+  }
+
+  /* Diag col-head: allow wrap on tablet */
+  .diag-col-head {
+    white-space: normal;
+    word-break: break-word;
+    font-size: 11px;
+    padding: 8px 12px;
+  }
+
+  /* Stat value scale */
+  .stat-value {
+    font-size: 1.7rem;
+  }
+
+  /* Formula: horizontal scroll */
+  .formula {
+    font-size: 0.82rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 14px 16px;
+  }
+
+  /* Sidebar footer */
+  .sidebar-footer {
+    display: none;
+  }
+}
+
+/* ── Mobile (≤600px) — compact everything ── */
+@media (max-width: 600px) {
+
+  /* Root font */
+  html { font-size: 14px; }
+
+  /* Header */
+  .site-header {
+    padding: 0 14px;
+    gap: 10px;
+  }
+  .header-logo-text {
+    font-size: 12px;
+  }
+  .header-tag {
+    display: none;
+  }
+
+  /* Content */
+  .content {
+    padding: 20px 14px 80px;
+  }
+
+  /* Headings */
+  h1 {
+    font-size: 1.65rem;
+    letter-spacing: -0.02em;
+  }
+  h2 {
+    font-size: 1.1rem;
+    margin-top: 32px;
+  }
+  h3 {
+    font-size: 0.97rem;
+  }
+  .subtitle {
+    font-size: 0.97rem;
+  }
+
+  /* Stat grid: single column */
+  .stat-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .stat-value {
+    font-size: 1.55rem;
+  }
+  .stat-card {
+    padding: 16px 14px;
+  }
+
+  /* Phase cards */
+  .phase-card {
+    padding: 18px 16px 16px;
+  }
+
+  /* Diagram inner */
+  .diag-inner {
+    padding: 12px 10px;
+  }
+  .diag-title {
+    font-size: 11px;
+  }
+
+  /* Stages: stack on mobile */
+  .diag-stages {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .diag-stage {
+    flex: unset;
+    width: 100%;
+  }
+
+  /* Layers */
+  .diag-layer {
+    padding: 12px 12px;
+    gap: 8px;
+  }
+  .diag-layer-badge {
+    display: none;
+  }
+
+  /* Diag items */
+  .diag-item {
+    padding: 8px 10px;
+  }
+  .diag-item-title {
+    font-size: 11px;
+  }
+  .diag-item-sub {
+    font-size: 9.5px;
+  }
+
+  /* Tags */
+  .diag-tag {
+    font-size: 9px;
+    padding: 2px 6px;
+  }
+
+  /* Callout */
+  .callout {
+    padding: 14px 16px;
+    margin: 20px 0;
+  }
+  .callout p {
+    font-size: 0.88rem;
+  }
+
+  /* Info box */
+  .info-box {
+    padding: 16px 18px;
+  }
+
+  /* Formula */
+  .formula {
+    font-size: 0.78rem;
+    padding: 12px 14px;
+  }
+
+  /* Page nav */
+  .page-nav {
+    margin-top: 48px;
+    padding-top: 24px;
+    gap: 8px;
+  }
+  .page-nav a {
+    padding: 14px 16px;
+  }
+  .page-nav-title {
+    font-size: 12.5px;
+  }
+
+  /* Footer */
+  .doc-footer {
+    margin-top: 48px;
+  }
+  .doc-footer p {
+    font-size: 0.75rem;
+  }
+
+  /* Table: smaller text */
+  table {
+    font-size: 0.8rem;
+  }
+  thead th {
+    font-size: 0.7rem;
+    padding: 10px 12px;
+  }
+  tbody td {
+    padding: 10px 12px;
+  }
+
+  /* Diagram container */
+  .diagram-container {
+    margin: 18px 0;
+    border-radius: var(--radius);
+  }
+
+  /* Diag-col body padding */
+  .diag-col-body {
+    padding: 8px;
+    gap: 5px;
+  }
+
+  /* Badge */
+  .badge {
+    font-size: 10px;
+    padding: 3px 10px;
+    margin-bottom: 16px;
+  }
+
+  /* KV rows in diagrams */
+  .diag-kv {
+    padding: 4px 0;
+  }
+  .diag-kv-val {
+    font-size: 10.5px;
+  }
+
+  /* Footer bar */
+  .diag-footer-bar {
+    font-size: 9px;
+    padding: 7px 10px;
+    margin: 10px 6px 2px;
+  }
+}
+
+/* ── Very small (≤380px) ── */
+@media (max-width: 380px) {
+  html { font-size: 13px; }
+  .content { padding: 16px 12px 72px; }
+  h1 { font-size: 1.45rem; }
+  .diag-col-head { font-size: 10px; padding: 7px 10px; }
+  .diag-item-title { font-size: 10.5px; }
+}
+
+/* ══════════════════════════════════════════
+   MOBILE SIDEBAR BUG FIXES
+   ══════════════════════════════════════════ */
+
+/* 1. Kill the slideInLeft animation on mobile — it fights transform:translateX(-100%) */
+@media (max-width: 900px) {
+  .sidebar {
+    animation: none !important;
+    /* Ensure sidebar starts fully hidden, no animation override */
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.22,1,0.36,1),
+                box-shadow 0.3s;
+  }
+  .sidebar.open {
+    transform: translateX(0);
+    box-shadow: 4px 0 40px rgba(0,0,0,0.18);
+  }
+
+  /* 2. Dark overlay behind sidebar when open */
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 89;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .sidebar-overlay.visible {
+    display: block;
+    opacity: 1;
+  }
+}
+
+/* Dark mode overlay */
+[data-theme="dark"] .sidebar-overlay {
+  background: rgba(0,0,0,0.65);
+}
+
+/* ══════════════════════════════════════════
+   MOBILE ARROW / CONNECTOR FIX
+   The existing bug-fix sets width:auto!important on .diag-arrow svg
+   which causes SVGs to stretch on mobile. Override with fixed px.
+   ══════════════════════════════════════════ */
+
+@media (max-width: 900px) {
+
+  /* Arrow: horizontal strip pointing down */
+  .diag-arrow {
+    width: 100% !important;
+    height: 32px !important;
+    flex-direction: row;
+    transform: none !important;   /* no CSS rotate — use a down-arrow SVG instead */
+    padding: 0;
+    position: relative;
+  }
+
+  /* Hide the original sideways SVG arrow */
+  .diag-arrow svg {
+    display: none !important;
+  }
+
+  /* Draw a simple downward arrow using pure CSS pseudo-element */
+  .diag-arrow::after {
+    content: '';
+    display: block;
+    margin: auto;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 12px solid var(--purple-mid);
+  }
+  .diag-arrow.a-green::after {
+    border-top-color: #16A34A;
+  }
+
+  /* Prevent diag-cols flex children from stretching to full height */
+  .diag-cols {
+    align-items: stretch;
+  }
+
+  /* diag-col: remove fixed width from desktop */
+  .diag-col {
+    flex: unset !important;
+    width: 100% !important;
+    min-width: unset !important;
+  }
+
+  /* Stage connectors: also hide on mobile (stages stack vertically) */
+  .diag-stage-connector {
+    display: none !important;
+  }
+
+  /* diag-inner: no horizontal overflow */
+  .diag-inner {
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 600px) {
+  .diag-arrow {
+    height: 24px !important;
+  }
+  .diag-arrow::after {
+    border-left-width: 8px;
+    border-right-width: 8px;
+    border-top-width: 10px;
+  }
+}
+
+/* Mobile diagram art-direction pass */
+@media (max-width: 900px) {
+  .diagram-container.diag-html {
+    background:linear-gradient(180deg,var(--bg),var(--bg-secondary));
+  }
+
+  .diagram-container.diag-html:hover {
+    transform:none;
+  }
+
+  .diag-inner {
+    padding:14px;
+  }
+
+  .diag-title {
+    max-width:280px;
+    margin:0 auto 14px;
+    font-size:11px;
+    line-height:1.35;
+    color:var(--fg-muted);
+  }
+
+  .diag-cols,
+  .diag-stages,
+  .diag-layers,
+  .diag-dual {
+    gap:10px;
+  }
+
+  .diag-col,
+  .diag-stage,
+  .diag-layer,
+  .diag-dual-col {
+    border-radius:12px;
+    box-shadow:0 1px 0 rgba(0,0,0,0.03),0 8px 24px rgba(0,0,0,0.045);
+  }
+
+  .diag-col:hover,
+  .diag-stage:hover,
+  .diag-layer:hover,
+  .diag-dual-col:hover {
+    transform:none;
+  }
+
+  .diag-arrow {
+    height:22px !important;
+    margin:-1px 0;
+  }
+
+  .diag-arrow::after {
+    filter:drop-shadow(0 3px 5px rgba(124,58,237,0.2));
+  }
+
+  .diag-stage-connector {
+    display:flex !important;
+    width:100% !important;
+    height:22px !important;
+    color:var(--purple-mid);
+    position:relative;
+  }
+
+  .diag-stage-connector svg {
+    display:none !important;
+  }
+
+  .diag-stage-connector::after {
+    content:'';
+    display:block;
+    margin:auto;
+    width:0;
+    height:0;
+    border-left:8px solid transparent;
+    border-right:8px solid transparent;
+    border-top:10px solid var(--purple-mid);
+    filter:drop-shadow(0 3px 5px rgba(124,58,237,0.18));
+  }
+
+  .diag-dual-connect {
+    height:34px;
+  }
+
+  .diag-dual-dot {
+    width:28px;
+    height:28px;
+    background:var(--bg);
+    box-shadow:0 0 0 5px var(--purple-bg);
+  }
+
+  .diag-dual-dot svg {
+    transform:rotate(90deg);
+  }
+
+  .diag-layer-icon {
+    width:34px;
+    height:34px;
+    flex:0 0 34px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:10px;
+    background:rgba(124,58,237,0.07);
+    border:1px solid rgba(124,58,237,0.12);
+  }
+
+  .diag-layer-icon svg {
+    width:28px !important;
+    height:28px !important;
+  }
+
+  .diag-layer {
+    align-items:center;
+  }
+
+  .diagram-label {
+    line-height:1.35;
+    letter-spacing:0.04em;
+  }
+}
+
+@media (max-width: 600px) {
+  .diagram-container {
+    margin:20px -2px;
+  }
+
+  .diag-inner {
+    padding:12px;
+  }
+
+  .diag-title {
+    max-width:250px;
+    margin-bottom:12px;
+    font-size:10.5px;
+  }
+
+  .diag-cols,
+  .diag-stages,
+  .diag-layers,
+  .diag-dual {
+    gap:8px;
+  }
+
+  .diag-col-head {
+    padding:8px 10px;
+    text-align:center;
+    font-size:10px;
+    line-height:1.25;
+    letter-spacing:0.075em;
+  }
+
+  .diag-col-body {
+    padding:7px;
+    gap:6px;
+  }
+
+  .diag-item {
+    padding:8px 9px;
+    border-radius:8px;
+  }
+
+  .diag-item-title {
+    font-size:10.75px;
+    line-height:1.28;
+  }
+
+  .diag-item-sub {
+    margin-top:1px;
+    font-size:9.25px;
+    line-height:1.32;
+  }
+
+  .diag-item[style*="text-align:center"] .diag-item-title {
+    font-size:1.22rem !important;
+    line-height:1.05;
+  }
+
+  .diag-tag {
+    padding:2px 6px;
+    font-size:8.75px;
+    line-height:1.2;
+  }
+
+  .diag-arrow,
+  .diag-stage-connector {
+    height:18px !important;
+  }
+
+  .diag-arrow::after,
+  .diag-stage-connector::after {
+    border-left-width:7px;
+    border-right-width:7px;
+    border-top-width:9px;
+  }
+
+  .diag-stage {
+    min-height:0;
+  }
+
+  .diag-stage-num {
+    padding:8px 10px 0;
+    font-size:8.5px;
+    line-height:1.25;
+  }
+
+  .diag-stage-title {
+    padding:3px 10px 3px;
+    font-size:10.75px;
+    line-height:1.28;
+  }
+
+  .diag-stage-mono {
+    padding:3px 10px;
+    font-size:10px;
+  }
+
+  .diag-stage-body {
+    padding:3px 10px 10px;
+  }
+
+  .diag-stage-line {
+    font-size:9.25px;
+    line-height:1.38;
+  }
+
+  .diag-stage-tag {
+    margin-top:4px;
+    font-size:8.75px;
+  }
+
+  .diag-layer {
+    padding:10px;
+    gap:8px;
+  }
+
+  .diag-layer-num {
+    width:28px;
+    height:28px;
+    border-radius:8px;
+    font-size:9px;
+  }
+
+  .diag-layer-icon {
+    width:30px;
+    height:30px;
+    flex-basis:30px;
+    border-radius:9px;
+  }
+
+  .diag-layer-icon svg {
+    width:24px !important;
+    height:24px !important;
+  }
+
+  .diag-layer-lbl {
+    font-size:8.5px;
+    line-height:1.2;
+  }
+
+  .diag-layer-title {
+    font-size:10.75px;
+    line-height:1.25;
+  }
+
+  .diag-layer-desc {
+    font-size:9px;
+    line-height:1.35;
+  }
+
+  .diag-layer-connector {
+    padding:0;
+    height:14px;
+  }
+
+  .diag-result {
+    padding:9px 12px;
+    border-radius:10px;
+  }
+
+  .diag-result span {
+    font-size:10px;
+  }
+
+  .diag-dual-connect {
+    height:28px;
+  }
+
+  .diag-dual-dot {
+    width:24px;
+    height:24px;
+  }
+
+  .diag-footer-bar {
+    margin:9px 5px 1px;
+    padding:7px 9px;
+    font-size:8.75px;
+    line-height:1.3;
+  }
+
+  .diagram-label {
+    padding:8px 12px;
+    font-size:9px;
+    text-align:center;
+  }
+}
+
+@media (max-width: 380px) {
+  .diagram-container {
+    margin-left:-4px;
+    margin-right:-4px;
+  }
+
+  .diag-inner {
+    padding:10px;
+  }
+
+  .diag-layer-icon {
+    display:none;
+  }
+}
+
+/* Mobile diagram refinement: tighter hierarchy, lighter connectors, less blockiness */
+@media (max-width: 600px) {
+  .diagram-container.diag-html {
+    border-radius:12px;
+    background:var(--bg);
+    box-shadow:0 8px 26px rgba(0,0,0,0.055);
+  }
+
+  .diag-inner {
+    padding:14px 12px 12px;
+  }
+
+  .diag-title {
+    max-width:100%;
+    margin-bottom:14px;
+    font-size:11.25px;
+    font-weight:750;
+    color:#4B4B55;
+    letter-spacing:0;
+  }
+
+  .diag-cols,
+  .diag-stages,
+  .diag-dual {
+    gap:0;
+  }
+
+  .diag-col,
+  .diag-stage,
+  .diag-dual-col {
+    border-radius:10px;
+    box-shadow:none;
+  }
+
+  .diag-col {
+    overflow:hidden;
+  }
+
+  .diag-col-head {
+    padding:8px 12px;
+    font-size:10px;
+    font-weight:850;
+    letter-spacing:0.09em;
+    background:rgba(250,250,250,0.9);
+  }
+
+  .diag-col-body {
+    padding:8px 10px 10px;
+    gap:6px;
+  }
+
+  .diag-col.c-green .diag-col-body {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:7px;
+  }
+
+  .diag-col.c-green .diag-item.diag-item-hl,
+  .diag-col.c-green .diag-footer-bar {
+    grid-column:1 / -1;
+  }
+
+  .diag-col.c-green .diag-item {
+    min-height:48px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+
+  .diag-col.c-green .diag-item-title,
+  .diag-col.c-green .diag-item-sub {
+    overflow-wrap:anywhere;
+  }
+
+  .diag-item {
+    padding:8px 10px;
+    border-radius:7px;
+    background:rgba(255,255,255,0.66);
+  }
+
+  .diag-item:hover {
+    transform:none;
+    box-shadow:none;
+  }
+
+  .diag-item-title {
+    font-size:10.9px;
+    font-weight:750;
+  }
+
+  .diag-item-sub {
+    font-size:9.35px;
+    color:#71717A;
+  }
+
+  .c-purple .diag-item {
+    background:rgba(237,233,254,0.62);
+  }
+
+  .c-green .diag-item {
+    background:rgba(255,255,255,0.72);
+  }
+
+  .diag-tag {
+    border-radius:6px;
+    font-size:8.7px;
+    font-weight:750;
+  }
+
+  .diag-arrow,
+  .diag-stage-connector {
+    height:28px !important;
+    margin:0;
+    position:relative;
+  }
+
+  .diag-arrow::before,
+  .diag-stage-connector::before {
+    content:'';
+    position:absolute;
+    top:4px;
+    bottom:4px;
+    left:50%;
+    width:1px;
+    background:linear-gradient(180deg,rgba(124,58,237,0.08),rgba(124,58,237,0.55),rgba(124,58,237,0.08));
+  }
+
+  .diag-arrow::after,
+  .diag-stage-connector::after {
+    border-left-width:5px;
+    border-right-width:5px;
+    border-top-width:6px;
+    filter:none;
+  }
+
+  .diag-stage {
+    position:relative;
+    overflow:hidden;
+    border-color:var(--border);
+    background:var(--bg);
+  }
+
+  .diag-stage::before {
+    content:'';
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    width:3px;
+    background:var(--border);
+  }
+
+  .diag-stage.s-purple::before {
+    background:linear-gradient(180deg,#A78BFA,#7C3AED);
+  }
+
+  .diag-stage.s-green::before {
+    background:linear-gradient(180deg,#86EFAC,#16A34A);
+  }
+
+  .diag-stage-num {
+    padding:11px 13px 0 15px;
+    font-size:8.75px;
+    letter-spacing:0.12em;
+  }
+
+  .diag-stage-title {
+    padding:3px 13px 4px 15px;
+    font-size:11.2px;
+    font-weight:800;
+  }
+
+  .diag-stage-mono {
+    padding:4px 13px 2px 15px;
+    font-size:10px;
+  }
+
+  .diag-stage-body {
+    padding:4px 13px 12px 15px;
+  }
+
+  .diag-stage-line {
+    font-size:9.6px;
+  }
+
+  .diag-stage-tag {
+    font-size:9px;
+  }
+
+  .diag-footer-bar,
+  .diag-footer-bar.bar-purple {
+    margin:10px 0 0;
+    padding:9px 12px;
+    border-radius:9px;
+    border:1px solid rgba(124,58,237,0.22);
+    background:rgba(124,58,237,0.08);
+    color:#5B21B6;
+    font-size:9px;
+    font-weight:800;
+    line-height:1.25;
+    box-shadow:none;
+  }
+
+  .diag-layer {
+    box-shadow:none;
+    border-radius:10px;
+  }
+
+  .diagram-label {
+    border-top-color:var(--border-light);
+    background:var(--bg-secondary);
+    font-size:9px;
+    font-weight:800;
+    color:#A1A1AA;
+  }
+}
+
+@media (max-width: 340px) {
+  .diag-col.c-green .diag-col-body {
+    grid-template-columns:1fr;
+  }
+}
