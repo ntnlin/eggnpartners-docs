@@ -126,40 +126,72 @@
 <div class="diagram-label">Figure 5 — EGGT Economic Architecture: The Self-Sustaining Flywheel</div>
 </div>
 
-<h2>S2EXT2E Reward Engine</h2>
-<p>EGGT adopts a precision mathematical model combining social reach with market liquidity to prevent reward pool depletion by macros or bots:</p>
-<div class="formula">R = r × [ (s × x) / (Σs × Σx) ]</div>
-<p>Where <em>r</em> = total analyzer fees and reward pool, <em>s</em> = social impact factor, <em>x</em> = liquidity contribution index.</p>
+<h2>1) 3-Tier Tokenomics Architecture</h2>
+<p>To simultaneously satisfy the stability requirements of institutional investors and the clear utility experience of general users, the ecosystem is meticulously categorized into three functional tiers:</p>
+<ul>
+  <li><strong>Tier 1: NFT (Access &amp; Identity Layer):</strong> A strategic gateway for entering real-world assets. Beyond simple imagery, it incorporates membership tiers, proof of ownership, and governance access rights integrated with <strong>DID (Decentralized Identity)</strong>.</li>
+  <li><strong>Tier 2: RWA Token (Reward &amp; Yield Layer):</strong> A layer where the value of the real economy is directly projected. These act as yield-bearing certificates, distributing actual cash flows — such as mobility operation revenues from <strong>EHang (NASDAQ)</strong> or K-Pop IP royalties from <strong>Danal (KOSDAQ)</strong> — to token holders.</li>
+  <li><strong>Tier 3: EGGT (Utility &amp; Currency Layer):</strong> The native currency acting as the "lifeblood" of the ecosystem. It is utilized for gas fees, governance staking (<strong>EGGTcourt</strong>), primary payment for RWA assets, and as a core medium for liquidity provision.</li>
+</ul>
 
-<h2>R-Engine Distribution</h2>
-<p>Fees from RWA transactions and ecosystem operations are redistributed to stakers via the R-Engine:</p>
+<h2>2) S2EXT2E Reward Engine: Mathematical Integrity</h2>
+<p>To prevent the depletion of reward pools by macros or bots, EGGT adopts a precision mathematical model that combines social reach with market liquidity.</p>
+<p><strong>Formula: Individual Reward Distribution (<em>R</em>)</strong></p>
+<div class="formula">R = r × [ (s × x) / (Σs × Σx) ]</div>
+<ul>
+  <li><em>r</em>: Total Analyzer fees and reward pool</li>
+  <li><em>s</em>: Social Impact Factor (Individual SNS activity and ecosystem contribution)</li>
+  <li><em>x</em>: Liquidity Contribution Index (Individual asset trading volume)</li>
+</ul>
+<p>This formula ensures that reward distribution is a function of both social engagement and transaction volume, creating a powerful synergy between community growth and price stability.</p>
+
+<h2>3) R-Engine: Institutional Revenue Distribution System</h2>
+<p>Fees generated from RWA transactions and ecosystem operations are redistributed to stakers via the <strong>R-Engine</strong>. This follows a transparent reward model based on stake weight, precluding subjective intervention.</p>
+<p><strong>Formula: Reward Distribution by R-Engine (<em>R<sub>A</sub></em>)</strong></p>
 <div class="formula">R<sub>A</sub> = (K<sub>i</sub> / K<sub>T</sub>) × n</div>
-<p>Where <em>K<sub>i</sub></em> = individual staking weight, <em>K<sub>T</sub></em> = total ecosystem staking, <em>n</em> = cumulative reward resources.</p>
+<ul>
+  <li><em>K<sub>i</sub></em>: Individual staking quantity and weight</li>
+  <li><em>K<sub>T</sub></em>: Total ecosystem staking volume</li>
+  <li><em>n</em>: Total cumulative reward resources accumulated in R-Engine</li>
+  <li><em>M<sub>i</sub></em>: Period weight multiplier</li>
+</ul>
+<p>Staking functions as a <strong>"Real Yield"</strong> channel where participants share in the <strong>Operation Yield</strong> of real-world assets rather than simple lock-ups. Long-term stakers (<em>M<sub>i</sub></em>) are granted higher revenue distribution ratios.</p>
+
+<h2>4) Integrity &amp; Anti-Manipulation: Automated Value Defense</h2>
+<p>To maintain the economic equilibrium of the RWA Empire, two advanced automated protocols operate continuously:</p>
+<ul>
+  <li><strong>EGGT Exchanger (Automatic Buy-Pressure Protocol):</strong> When RWA transactions are executed using external assets (ETH, MATIC, KLAY, etc.), the system automatically swaps a designated percentage of the fees for EGGT on the open market. This volume flows into the R-Engine, creating a continuous <strong>organic buy-back effect</strong> and buy pressure for EGGT regardless of the payment currency.</li>
+  <li><strong>Sybil Defense &amp; Filtering Logic:</strong> To protect the reward pool, the S2EXT2E algorithm applies strict active filtering. Accounts falling below the threshold for both activity index (<em>s</em>) and transaction index (<em>x</em>) within a specific period (Epoch) are automatically excluded from distribution. This technical device ensures incentives are concentrated only on actual contributors and active RWA holders.</li>
+</ul>
+
+<h2>5) Omnichain Sovereignty &amp; Extension</h2>
+<p>EGGT operates simultaneously on <strong>Ethereum (ERC-20)</strong> and <strong>BNB Chain (BEP-20)</strong> to secure global liquidity. Utilizing <strong>LayerZero's OFT (Omnichain Fungible Token)</strong> standard, we guarantee seamless cross-chain asset movement, fully compatible with the technical standards of top-tier global exchanges like Binance. All expansions strictly adhere to the <strong>1 billion total supply cap</strong> via a 1:1 <strong>Lock-and-Mint</strong> mechanism.</p>
+
+<h2>6) 'Analyzer' Mechanism and Fee Recirculation</h2>
+<p>External NFT data tracked by <strong>NCR (Standardless)</strong> technology is integrated into the ecosystem through the <strong>EGGT Analyzer</strong>. Small fees generated during the synchronization of metadata and value appraisal of external assets are paid in EGGT. 100% of these fees are re-injected into the R-Engine, serving as a buffer to secure continuous reward resources even during periods of stagnant primary market trading.</p>
+
+<h2>7) Long-term Sustainability and 20-Year Vesting Plan</h2>
+<p>To protect investors from short-term market volatility and prove project permanence, Egg N Partners adheres to a <strong>20-year long-term vesting schedule</strong> — the highest standard in the virtual asset industry.</p>
 
 <h2>Token Allocation</h2>
 <div class="table-wrap">
 <table>
-  <thead><tr><th>Category</th><th>Allocation</th><th>Tokens (EGGT)</th><th>Vesting</th></tr></thead>
+  <thead><tr><th>Category</th><th>Allocation</th><th>Tokens (EGGT)</th><th>Vesting &amp; Lock-up</th></tr></thead>
   <tbody>
-    <tr><td>Ecosystem Growth (S2EXT2E)</td><td>40%</td><td>400,000,000</td><td>R-Engine participation release</td></tr>
-    <tr><td>Strategic Treasury</td><td>20%</td><td>200,000,000</td><td>Linear through Jan 2043</td></tr>
-    <tr><td>Strategic Alliances</td><td>15%</td><td>150,000,000</td><td>12-month cliff, 5-year linear</td></tr>
-    <tr><td>Core Contributors</td><td>10%</td><td>100,000,000</td><td>36-month cliff, linear to 2043</td></tr>
-    <tr><td>Market Liquidity</td><td>10%</td><td>100,000,000</td><td>Strategic Tier-1 provision</td></tr>
-    <tr><td>Institutional Advisors</td><td>5%</td><td>50,000,000</td><td>12-month cliff, 24-month linear</td></tr>
+    <tr><td>Ecosystem Growth (S2EXT2E)</td><td>40%</td><td>400,000,000</td><td>Released via R-Engine based on participation</td></tr>
+    <tr><td>Strategic Treasury (Long-term)</td><td>20%</td><td>200,000,000</td><td>Linear release through January 2043</td></tr>
+    <tr><td>Strategic Alliances (IP/Mobility)</td><td>15%</td><td>150,000,000</td><td>12-month cliff, linear release for 5 years</td></tr>
+    <tr><td>Core Contributors (Team)</td><td>10%</td><td>100,000,000</td><td>36-month cliff, linear release until 2043</td></tr>
+    <tr><td>Market Liquidity (CEX/DEX)</td><td>10%</td><td>100,000,000</td><td>Strategic provision for Tier-1 Exchanges</td></tr>
+    <tr><td>Institutional Advisors</td><td>5%</td><td>50,000,000</td><td>12-month cliff, 24-month linear release</td></tr>
   </tbody>
 </table>
 </div>
 
-<h2>Omnichain Sovereignty</h2>
-<p>EGGT operates on <strong>Ethereum (ERC-20)</strong> and <strong>BNB Chain (BEP-20)</strong> simultaneously via LayerZero's OFT standard. All expansions adhere to the 1 billion total supply cap via 1:1 Lock-and-Mint.</p>
-
-<h2>Integrity &amp; Anti-Manipulation</h2>
-<ul>
-  <li><strong>EGGT Exchanger:</strong> Automatically swaps a designated percentage of external-asset fees for EGGT, creating continuous organic buy-back pressure.</li>
-  <li><strong>Sybil Defense:</strong> S2EXT2E filtering excludes accounts below activity/transaction thresholds from reward distribution per epoch.</li>
-  <li><strong>Analyzer Mechanism:</strong> 100% of NCR synchronization fees are re-injected into the R-Engine as a continuous reward buffer.</li>
-</ul>
+<div class="callout">
+  <div class="callout-title">Anti-Inflation Summary</div>
+  <p>This 20-year linear distribution cycle is the most robust anti-inflation mechanism, preventing sudden supply shocks. By aligning the interests of the foundation and core contributors with value 20 years into the future, EGGT solidifies its status as the <strong>"Reserve Currency of the RWA Empire."</strong> This commitment, extending until 2043, is a definitive indicator of the project's integrity and longevity.</p>
+</div>
 <div class="page-nav">
   <a href="governance.html"><span class="page-nav-label">← Previous</span><span class="page-nav-title">04. Governance</span></a>
   <a class="next" href="infrastructure.html"><span class="page-nav-label">Next →</span><span class="page-nav-title">06. Infrastructure</span></a>

@@ -9,6 +9,11 @@
 <script>
 (function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);})();
 </script>
+
+<style>
+.diag-layer-icon { display:flex; align-items:center; justify-content:center; padding:0 8px; opacity:0.9; flex-shrink:0; }
+.diag-item-icon { display:flex; align-items:center; justify-content:center; margin-bottom:6px; opacity:0.85; }
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -64,6 +69,7 @@
 <div class="diag-layers">
   <div class="diag-layer">
     <div class="diag-layer-num">L1</div>
+    <div class="diag-layer-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="14" r="5" stroke="#7C3AED" stroke-width="1.5"/><path d="M8 28c0-5.5 4.5-9 10-9s10 3.5 10 9" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round"/><path d="M24 10 L27 7 M12 10 L9 7" stroke="#7C3AED" stroke-width="1.3" stroke-linecap="round"/><path d="M26 16 L30 16" stroke="#7C3AED" stroke-width="1.3" stroke-linecap="round"/><path d="M6 16 L10 16" stroke="#7C3AED" stroke-width="1.3" stroke-linecap="round"/></svg></div>
     <div class="diag-layer-content">
       <div class="diag-layer-lbl">Layer 1</div>
       <div class="diag-layer-title">DID Identity Anchoring</div>
@@ -74,6 +80,7 @@
   <div class="diag-layer-connector"><svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v10M2 8l4 4 4-4" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
   <div class="diag-layer">
     <div class="diag-layer-num">L2</div>
+    <div class="diag-layer-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="8" y="10" width="20" height="16" rx="3" stroke="#7C3AED" stroke-width="1.5"/><path d="M13 10V8a5 5 0 0 1 10 0v2" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round"/><circle cx="18" cy="18" r="3" stroke="#7C3AED" stroke-width="1.4"/><line x1="18" y1="21" x2="18" y2="23" stroke="#7C3AED" stroke-width="1.3" stroke-linecap="round"/></svg></div>
     <div class="diag-layer-content">
       <div class="diag-layer-lbl">Layer 2</div>
       <div class="diag-layer-title">ZKP Privacy &amp; Governance Staking</div>
@@ -84,6 +91,7 @@
   <div class="diag-layer-connector"><svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 1v10M2 8l4 4 4-4" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
   <div class="diag-layer">
     <div class="diag-layer-num">L3</div>
+    <div class="diag-layer-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="12" r="4" stroke="#7C3AED" stroke-width="1.4"/><circle cx="10" cy="24" r="3" stroke="#7C3AED" stroke-width="1.3"/><circle cx="18" cy="24" r="3" stroke="#7C3AED" stroke-width="1.3"/><circle cx="26" cy="24" r="3" stroke="#7C3AED" stroke-width="1.3"/><line x1="18" y1="16" x2="10" y2="21" stroke="#7C3AED" stroke-width="1.2"/><line x1="18" y1="16" x2="18" y2="21" stroke="#7C3AED" stroke-width="1.2"/><line x1="18" y1="16" x2="26" y2="21" stroke="#7C3AED" stroke-width="1.2"/></svg></div>
     <div class="diag-layer-content">
       <div class="diag-layer-lbl">Layer 3</div>
       <div class="diag-layer-title">Weighted Voting Engine</div>
@@ -101,20 +109,34 @@
 <div class="diagram-label">Figure 4 — EGGTcourt: Cryptographic Governance Stack</div>
 </div>
 
-<h2>Identity Anchoring</h2>
-<p>Voting rights are mapped 1:1 to a verified DID, technically preventing Sybil Attacks. The DID layer integrates with real-world KYC/AML requirements, ensuring the RWA ecosystem operates within a transparent and accountable legal framework.</p>
-
-<h2>ZKP-powered Privacy &amp; Staking</h2>
-<p>Participants can cryptographically prove vote validity without revealing wallet address or token balance. Proposers and major voters must stake EGGT into the governance pool — assets can be slashed if a proposal intentionally harms the ecosystem.</p>
-
-<h2>Multi-Voting Engine</h2>
-<p>Users can vote on multiple RWA listing agendas simultaneously with a single transaction signature. Role-based NFT holders receive higher weighting in their respective fields, ensuring expertise-driven governance.</p>
-
-<h2>Contribution-based Weighted Voting</h2>
+<h2>1) Identity Anchoring: DID-based Sybil Defense &amp; Compliance</h2>
+<p>To preemptively block governance manipulation and satisfy global regulatory guidelines, a <strong>Decentralized Identity (DID)</strong> verification layer is implemented as the core of the architecture.</p>
 <ul>
-  <li><strong>EGGLORD (Core Contributors):</strong> Oversee strategic RWA listings and infrastructure expansion.</li>
-  <li><strong>Creators &amp; Rightsholders:</strong> Primary IP creators with specialized weighting for creator-friendly policies.</li>
-  <li><strong>Moderators (Governance Guardians):</strong> Elected guardians managing voting module integrity.</li>
+  <li><strong>Identity Anchoring:</strong> Voting rights are mapped 1:1 to a verified DID. This technically prevents <strong>Sybil Attacks</strong>, where a single entity creates numerous wallets to abuse voting power or manipulate public opinion.</li>
+  <li><strong>Compliance by Design:</strong> The DID layer is structured to integrate with real-world <strong>KYC/AML</strong> requirements, ensuring the RWA ecosystem operates within a transparent and accountable legal framework. This is a critical technical indicator for listing on top-tier global exchanges.</li>
+</ul>
+
+<h2>2) Privacy &amp; Responsibility: ZKP-powered Anonymity and Governance Staking</h2>
+<p>EGGTcourt utilizes <strong>Zero-Knowledge Proofs (ZKP)</strong> to perfectly synchronize individual privacy with institutional-grade disclosure transparency, while adding weight to decisions through staking.</p>
+<ul>
+  <li><strong>Cryptographic Privacy:</strong> Participants can cryptographically prove the validity of their vote without revealing their wallet address or token balance via a <strong>ZKP-compatible Commitment Scheme</strong>. This enables a "secret ballot" environment where high-net-worth individuals or institutional investors can vote based on conviction without external pressure.</li>
+  <li><strong>Governance Staking:</strong> Proposers and major voters must stake a specific amount of EGGT into the governance pool. Following the <strong>"Skin in the Game"</strong> principle, this acts as an economic anchor to prevent malicious proposals or irresponsible voting. Assets can be <strong>slashed</strong> if a proposal is found to intentionally harm the ecosystem.</li>
+  <li><strong>Auditability:</strong> While voter identity remains anonymous, all voting sequences and results are recorded on-chain, providing a <strong>100% verifiable audit trail</strong> upon request by regulatory authorities.</li>
+</ul>
+
+<h2>3) Efficiency &amp; Scalability: Multi-Dimensional Governance &amp; Multi-Voting Engine</h2>
+<p>To resolve the liquidity fragmentation and gas fee burdens of traditional DAOs, we have introduced a <strong>Multi-Voting Engine</strong>.</p>
+<ul>
+  <li><strong>Multi-Smart Contract (MSC) Integration:</strong> Users can vote on multiple RWA listing agendas (e.g., EHang drone assetization, content fund allocation, etc.) simultaneously with a single transaction signature.</li>
+  <li><strong>Strategic Category Weighting:</strong> Holders of role-based NFTs (ID/Access) are granted higher weighting in policy decisions within their respective fields, ensuring expertise-driven decision-making.</li>
+</ul>
+
+<h2>4) Meritocratic Participation: Contribution-based Weighted Voting</h2>
+<p>Egg N Partners is designed so that entities with high ecosystem contribution, rather than just capital size, lead the governance.</p>
+<ul>
+  <li><strong>EGGLORD (Core Contributors):</strong> Oversee strategic RWA listings and infrastructure expansion, sharing the highest level of governance responsibility.</li>
+  <li><strong>Creators &amp; Rightsholders:</strong> Primary IP creators who hold specialized weighting to establish creator-friendly policies.</li>
+  <li><strong>Moderators (Governance Guardians):</strong> Elected guardians who manage the integrity of the voting modules and defend against manipulation attempts.</li>
 </ul>
 <div class="page-nav">
   <a href="problem.html"><span class="page-nav-label">← Previous</span><span class="page-nav-title">03. Problem Statement</span></a>
