@@ -232,9 +232,13 @@ tbody tr:hover td{background:var(--purple-bg)}
   font-size:0.9rem;background:linear-gradient(135deg,#F8F7FF,#F3F0FF);
   padding:18px 22px;border-radius:var(--radius);margin:18px 0;
   border:1px solid var(--purple-border);color:var(--purple);
-  overflow-x:auto;display:block;
+  overflow-x:auto;display:block;text-align:center;
   box-shadow:var(--shadow-sm);
 }
+.formula .katex-display{margin:0}
+.formula .katex{font-size:1.2rem;color:var(--text)}
+[data-theme="dark"] .formula{background:linear-gradient(135deg,rgba(109,40,217,0.12),rgba(124,58,237,0.08));border-color:rgba(167,139,250,0.25)}
+[data-theme="dark"] .formula .katex{color:var(--text)}
 
 /* DIAGRAMS */
 .diagram-container{

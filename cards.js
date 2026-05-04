@@ -140,6 +140,21 @@
     els.forEach(function (el) { observer.observe(el); });
   }
 
+  /* ── Animate progress bars inside phase cards ── */
+  function animateVisibleProgress() {
+    document.querySelectorAll('.phase-card-progress-fill').forEach(function (bar) {
+      var pct = bar.dataset.pct || '0';
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.style.width = pct + '%';
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.2 });
+      observer.observe(bar);
+    });
+  }
+
   /* ── Init ── */
   function init() {
     enhancePhaseCards();
